@@ -1,3 +1,6 @@
+#code for line follower
+#code by Vitthal Harsh
+
 #include <QTRSensors.h>
 #include "QTRSensors.h"
 #include <Arduino.h>
@@ -98,13 +101,13 @@ void loop()
  int position = qtr.readLineBlack(sensors); // get calibrated readings along with the line position, refer to the QTR Sensors Arduino Library for more details on line position.
   
   if(position>6700){
-    move(1, speedturn, 1);//motor derecho hacia adelante
-    move(0, speedturn, 0);//motor izquierdo hacia adelante
+    move(1, speedturn, 1); 
+    move(0, speedturn, 0);
     return;    
   }
   if(position<300){ 
-    move(1, speedturn, 0);//motor derecho hacia adelante
-    move(0, speedturn, 1);//motor izquierdo hacia adelante
+    move(1, speedturn, 0);
+    move(0, speedturn, 1);
     return;
   }
   
@@ -120,7 +123,7 @@ void loop()
   if (rightMotorSpeed < 0)rightMotorSpeed = 0;    
   if (leftMotorSpeed < 0)leftMotorSpeed = 0;
     
-  move(1, rightMotorSpeed, 1);//motor derecho hacia adelante
-  move(0, leftMotorSpeed, 1);//motor izquierdo hacia adelante
-}
+  move(1, rightMotorSpeed, 1);
+  move(0, leftMotorSpeed, 1);
+  }
   
